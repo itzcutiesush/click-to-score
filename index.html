@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Game</title>
+	<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="column">
+				<label for="mode">Game mode:</label>
+				<select name="mode" onchange="createGrid(this)" id="select-game-mode">
+				  <option value="0">Choose</option>
+				  <option value="3">Easy:3X3</option>
+				  <option value="4">Medium:4X4</option>
+				  <option value="6">Hard:6X6</option>
+				</select>
+			</div>
+			<div class="column">
+				<label for="score">Score:</label>
+				<span id="current-score-field">0</span>
+			</div>
+			<div class="column">
+				<label for="high-score">High Score:</label>
+				<span id="high-score-field">0</span>
+			</div>
+			<div class="column">
+				<label for="times">Timer:</label>
+				<span id="countdown">0</span>
+			</div>
+		</div>
+		<table id="game-table" onclick="tableClickEvent(event)">
+			<tbody>
+			</tbody>
+		</table>
+		<div class="row">
+			<div class="column" style="margin: auto;">
+				<button type="button" id="start-game" class="btn btn-main" onclick="startGame()" disabled>Start</button>
+				<button type="button" class="btn btn-secondary" onclick="resetGame()">Reset</button>	
+			</div>
+		</div>
+		<div class="row">
+			<div class="column">
+				<label for="mode">Game Rules:</label>
+				<ul>
+					<li>Choose a mode & click on 'Start' to start the game.</li>
+					<li>On game start, in every 1 second, a random cell is highlighted in green for 1 second.</li>
+					<li>If you are quick to click on highlighted cell then you are rewarded 1 point.</li>
+					<li>If you are slow, then score is reduced by 1</li>
+					<li>When timer becomes 0, Game is Over!</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="script.js"></script>
+</html>
